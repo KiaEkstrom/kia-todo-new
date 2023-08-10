@@ -1,0 +1,17 @@
+$myFont: 'Courier New', sans-serif;
+$fontBlack: black;
+$fontGrey: #4d4d4d;
+$fontSize: 18px;
+$accentBlue: #33d6ff;
+$borderRadius: 8px;
+
+body {
+  background-color: #99ebff;
+  font-family: $myFont;
+  display: grid;
+  grid-template-columns: 3;
+  grid-template-rows: 4;
+}
+
+
+

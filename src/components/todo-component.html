@@ -1,0 +1,21 @@
+<template>
+
+  <require from="./todo-item"></require>
+  
+  <div class="todo">
+
+    <h1>${heading}</h1>
+   
+    <button type="button" class="edit-btn" click.trigger="editList()">Muokkaa listaa</button>
+  
+    <div class="todo-compose" style="display: none">
+        <input type="text" value.bind="todo" keypress.trigger="newTodo($event)" placeholder="Lisää tekemistä">
+    </div>
+
+    <div class="todo-items">
+        <todo-item repeat.for="todo of todos" todo.bind="todo" index.bind="$index" delete-todo.bind="deleteTodo"></todo-item>
+    </div>
+
+  </div>
+
+</template>

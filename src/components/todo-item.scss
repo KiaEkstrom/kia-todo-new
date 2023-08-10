@@ -1,0 +1,56 @@
+@use '/src/app';
+@use './todo-component';
+
+.todo-item {
+    @extend .todo;
+    border-bottom: 2px solid #ededed;
+    align-items: center;
+    word-wrap: break-word;
+    grid-template-columns: 50px 450px 50px;
+    
+    input[type="checkbox"] {
+        margin-left: 15px;
+        height: 25px;
+        width: 25px;
+    }
+    
+    p {
+        font-size: app.$fontSize;
+        padding: 15px;
+
+        @media only screen and (max-width: 665px) {
+            margin-left: 15px;
+        }
+    }
+    
+    button {
+        color: app.$fontGrey;
+        background-color: white;
+        font-size: 26px;
+        border: none;
+        justify-self: end;
+        visibility: hidden;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 665px) {
+        grid-template-rows: 4; 
+        grid-template-columns: 25px 225px 25px;
+      }
+}
+
+// ei toimi
+/*.todo-item.completed {
+    color: #cccccc;
+    text-decoration: line-through app.$accentBlue 3px;
+}*/
+
+.todo-item:hover button {
+    visibility: visible;
+}
+
+.todo-item button:active {
+    color: app.$accentBlue;
+    text-shadow: 2px 2px 10px app.$fontGrey;
+}
+

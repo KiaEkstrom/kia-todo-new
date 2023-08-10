@@ -1,0 +1,7 @@
+<template>
+    <div class="todo-item" completed.class="todo.completed">
+        <input type="checkbox" checked.bind="todo.completed">
+        <p>${todo.text}</p>
+        <button type="button" click.trigger="deleteTodo(index)">x</button>
+    </div>
+</template>

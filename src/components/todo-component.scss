@@ -1,0 +1,83 @@
+@use '/src/app';
+
+.todo {  
+    color: app.$fontBlack;
+    font-family: app.$myFont;
+    height: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 550px 1fr;
+
+    h1 {
+        text-decoration: underline black;
+        margin: 20px;
+        justify-self: center;
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .edit-btn {
+        background-color: app.$accentBlue;
+        color: app.$fontGrey;
+        font-family: app.$myFont;
+        font-size: app.$fontSize;
+        border: 3px solid black;
+        border-radius: app.$borderRadius;
+        padding: 10px;
+        margin: 10px;
+        width: 50%;
+        align-self: center;
+        justify-self: center;
+        grid-row: 2;
+        grid-column: 2;
+        
+    }
+    
+    .edit-btn:hover {
+        cursor: pointer;
+    }
+    
+    .todo-compose {
+        padding: 5px;
+        margin: 25px;
+        grid-row: 3;
+        grid-column: 2;
+        
+        input {
+        font-family: app.$myFont;
+        font-size: app.$fontSize;
+        border: 1px solid app.$fontGrey;
+        border-radius: app.$borderRadius;
+        padding: 15px;
+        margin: 2px -19px 2px;
+        width: 100%;
+        }
+    }
+
+    ::placeholder {
+        color: app.$fontGrey;
+        font-style: italic;
+    }
+
+    .todo-items {
+        background-color: white;
+        border-radius: app.$borderRadius;
+        margin: 50px -18px 30px -18px;
+        overflow: auto;
+        grid-row: 4;
+        grid-column: 2;
+
+        @media only screen and (max-width: 665px) {
+            width: 100%;
+            grid-template-rows: 4;
+            grid-template-columns: 1; 
+        }
+    }
+
+    @media only screen and (max-width: 665px) {
+        margin: auto;
+        width: 100%;
+        grid-template-rows: 4; 
+        grid-template-columns: auto;
+        }
+}
